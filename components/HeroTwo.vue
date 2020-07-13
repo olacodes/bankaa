@@ -5,7 +5,7 @@
     </div>
     <div class="hero-two-text-cont">
       <h2 class="hero-main-text">We are a high-level valuable storage bank</h2>
-      <p>
+      <p class="hero-para">
         The place to store various valuable that you can access at any time
         through the internet and where you can carry it. This very flexible
         storage area has a high level of security. To enter into your own data
@@ -40,6 +40,12 @@ export default {
   flex-direction: column;
   justify-content: center;
   max-width: 500px;
+}
+.hero-main-text{
+  font-size: 1.2rem;
+}
+.hero-para{
+  font-size: .8rem;
 }
 @media screen and (min-width: 700px) {
   .img-cont {

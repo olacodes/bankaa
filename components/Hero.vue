@@ -23,6 +23,9 @@ export default {
 </script>
 
 <style scoped>
+.button-cont{
+  margin-bottom: 1.5rem;
+}
 @media screen and (min-width: 700px){
 .hero-img-cont{
   max-width: 1200px;

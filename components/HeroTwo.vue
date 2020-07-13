@@ -16,13 +16,15 @@
 </template>
 
 <script>
-export default {}
+export default {
+  name: 'HeroTwo'
+}
 </script>
 
 <style scoped>
 .hero-two-cont {
   display: flex;
-  background-color: #f063b81e;
+  background-color: rgba(240, 99, 184, 0.15);
   border-radius: 1.5rem;
   justify-content: space-evenly;
 }

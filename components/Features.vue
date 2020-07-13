@@ -1,59 +1,104 @@
 <template>
   <div class="features-wrapper">
-    <div class="features-img-cont">
-      <img src="~/assets/banka3.png" alt="" class="feature-img" />
-    </div>
-    <div class="feature-text-border">
-
-    <div class="feature-text">
-      <h5 class="text-header has-text-centered">Search Data</h5>
-      <p class="feature-para has-text-justified">
-        Don't wory if your data is very large, the Data Warehouse provides a
-        search engine, which is useful for making it easier to find data
-        effectively saving time.
-      </p>
-    <p class="learn-more"> Learn more &rightarrow;</p>
-    </div>
+    <div
+      class="features-main-wrapper"
+      v-for="feature in features"
+      :key="feature.id"
+    >
+      <div class="features-img-cont">
+        <img :src="setImage(feature.id*1 + 2)" alt="feature" class="feature-img" />
+      </div>
+      <div
+        class="feature-text-border"
+        :style="{ backgroundColor: featureColor((feature.id * 1) + 2) }"
+      >
+        <div class="feature-text">
+          <h5 class="text-header has-text-centered">{{ feature.title }}</h5>
+          <p class="feature-para has-text-justified">
+            {{ feature.content }}
+          </p>
+          <p class="learn-more">Learn more &rightarrow;</p>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+import features from '../data/features'
+
+export default {
+  name: 'Featurs',
+  props: {
+    features: {
+      // eslint-disable-next-line vue/require-valid-default-prop
+      default: [],
+      type: Array,
+    },
+  },
+  methods: {
+    featureColor(val) {
+      if (val == 3) {
+        return '#68C9BA1C'
+      }
+      if (val == 5) {
+        return '#F063B81C'
+      }
+      if (val == 6) {
+        return '#2D9CDB1C'
+      }
+      if (val == 4) {
+        return '#9C69E21C'
+      }
+    },
+    setImage(val) {
+      return require(`~/assets/banka${val}.png`)
+    }
+  },
+  computed: {
+  }
+}
 </script>
 
 <style scoped>
-.features-wrapper{
-  /* display: flex; */
-  /* max-width: 30rem; */
+.features-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 2rem;
 }
-.feature-text-border{
-  /* border-top-left-radius: 50% 100%;
-  border-bottom-left-radius: 10% 10%;
-  border-bottom-right-radius: 20% 20%;
-  background-color: antiquewhite;
-  border: 2px solid red;
-  padding: 2rem 4rem; */
-  /* border-bottom: 100px solid red; */
+.features-main-wrapper {
+  margin: 2rem auto;
+  display: flex;
+}
+.features-img-cont {
+  width: 9rem;
+  height: 6rem;
+  z-index: 2;
+  display: flex;
+  align-self: center;
   position: relative;
-  height: 300px;
-  overflow: hidden;
-
-
+}
+.feature-img {
+  width: 100%;
+  position: absolute;
+  left: 4.5rem;
+}
+.feature-text-border {
+  clip-path: polygon(10% 0%, 100% 0%, 100% 100%, 0% 100%);
+  width: 28rem;
+  height: 15rem;
+  padding: 2rem;
+  padding-left: 7rem;
+  padding-right: 2rem;
+  border-radius: 2.5rem;
+  border-top-left-radius: 6rem;
+  position: relative;
+  /* border-bottom-left-radius: 4rem; */
 }
 .feature-text{
-  /* border: 2px solid black;
-  background-color: red; */
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  width: 50%;
-  height: 50%;
-  background-image: linear-gradient(#ff9d2f, #ff6126);
-  transform: skewY(6deg);
-  transform-origin: top left;
-  
-} 
+  color: black !important;
+  opacity: 1 !important;
+  color: #68c9ba2c
+}
 </style>

@@ -4,24 +4,30 @@
     <div class="container content">
       <div class="hero-cont">
         <Hero />
-        <div class="hero-two">
-          <HeroTwo />
-        </div>
-        <div class="features">
-          <h2 class="features-header has-text-centered">
-            Features
-          </h2>
-          <p class="features-text has-text-centered">
-            Some of the features and advantages that we provide for thos of you
-            who store valuable with us at banka
-          </p>
 
-          <div class="features-cont">
-            <Features/>
+        <div class="other-content">
+          <div class="hero-two">
+            <HeroTwo />
+          </div>
+          <div class="features">
+            <h2 class="features-header has-text-centered">
+              Features
+            </h2>
+            <p class="features-text has-text-centered">
+              Some of the features and advantages that we provide for thos of
+              you who store valuable with us at banka
+            </p>
+
+            <div class="features-cont">
+              <Features :features="features" />
+            </div>
           </div>
         </div>
+
       </div>
+
     </div>
+    <Footer />
   </div>
 </template>
 
@@ -30,6 +36,8 @@ import NavBar from '~/components/NavBar'
 import Hero from '~/components/Hero'
 import HeroTwo from '~/components/HeroTwo'
 import Features from '~/components/Features'
+import features from '../data/features'
+import Footer from '~/components/Footer'
 
 export default {
   layout: 'empty',
@@ -37,7 +45,13 @@ export default {
     NavBar,
     Hero,
     HeroTwo,
-    Features
+    Features,
+    Footer
+  },
+  data() {
+    return {
+      features,
+    }
   },
 }
 </script>
@@ -46,6 +60,9 @@ export default {
 .main-wrapper {
   background-color: rgb(245, 250, 255);
 }
+.other-content{
+  max-width: 1200px;
+}
 .hero-cont {
   margin: 3rem 0;
 }
@@ -53,11 +70,12 @@ export default {
   margin: 3rem 0;
 }
 .features-text {
-  width: 30rem;
+  max-width: 30rem;
   display: flex;
   justify-content: center;
   margin: 0 auto;
 }
+
 @media screen and (max-width: 1000px) {
   .content {
     margin: 0 20px;

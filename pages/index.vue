@@ -75,6 +75,9 @@ export default {
   justify-content: center;
   margin: 0 auto;
 }
+.features-cont{
+  margin-top: 3.5rem;
+}
 
 @media screen and (max-width: 1000px) {
   .content {

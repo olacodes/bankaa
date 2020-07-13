@@ -17,19 +17,25 @@
 
 <script>
 export default {
-  name: 'HeroTwo'
+  name: 'HeroTwo',
 }
 </script>
 
 <style scoped>
 .hero-two-cont {
-  display: flex;
+  padding: 1.5rem;
   background-color: rgba(240, 99, 184, 0.15);
   border-radius: 1.5rem;
-  justify-content: space-evenly;
+}
+.img-cont{
+  width: 15rem;
+}
+.banka1-img{
+  width: 100%;
+  height: auto;
 }
 
-.hero-two-text-cont{
+.hero-two-text-cont {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -38,12 +44,14 @@ export default {
 @media screen and (min-width: 700px) {
   .img-cont {
     margin-right: 1.5rem;
-    min-width: 10rem;
+    width: 25rem;
   }
-  .hero-two-cont{
+  .hero-two-cont {
+    display: flex;
+    justify-content: space-evenly;
     max-width: 1200px;
   }
-  .hero-main-text{
+  .hero-main-text {
     font-size: 2rem;
   }
 }

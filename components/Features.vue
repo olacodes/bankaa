@@ -65,7 +65,7 @@ export default {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin-top: 2rem;
+  margin-top: 2rem auto;
 }
 .features-main-wrapper {
   margin: 2rem auto;
@@ -96,9 +96,20 @@ export default {
   position: relative;
   /* border-bottom-left-radius: 4rem; */
 }
-.feature-text{
-  color: black !important;
-  opacity: 1 !important;
-  color: #68c9ba2c
+
+@media screen and (max-width: 700px){
+  .features-main-wrapper{
+    width: 280px;
+  }
+  .feature-text-border {
+    padding-left: 5rem;
+    font-size: .7rem;
+  }
+  .feature-img{
+    left: 1rem;
+    min-width: 6rem;
+    height: 5rem;
+  }
 }
+
 </style>

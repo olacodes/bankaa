@@ -1,7 +1,7 @@
 <template>
   <div class="is-white has-shadow myFooter">
     <h2 class="has-text-centered">
-      Hand-Crafted By <strong>Olatunde Sodiq</strong>
+      Hand-Crafted By <strong>Olatunde Sodiq</strong> <br />
       &copy; {{ year }}
     </h2>
   </div>

@@ -22,6 +22,9 @@
               <Features :features="features" />
             </div>
           </div>
+          <div class="testimonial-cont">
+            <Testimonial/>
+          </div>
         </div>
 
       </div>
@@ -32,12 +35,13 @@
 </template>
 
 <script>
-import NavBar from '~/components/NavBar'
-import Hero from '~/components/Hero'
-import HeroTwo from '~/components/HeroTwo'
-import Features from '~/components/Features'
+import NavBar from '~/components/webComponents/NavBar'
+import Hero from '~/components/webComponents/Hero'
+import HeroTwo from '~/components/webComponents/HeroTwo'
+import Features from '~/components/webComponents/Features'
 import features from '../data/features'
-import Footer from '~/components/Footer'
+import Footer from '~/components/webComponents/Footer'
+import Testimonial from '~/components/webComponents/Testimonial'
 
 export default {
   layout: 'empty',
@@ -46,6 +50,7 @@ export default {
     Hero,
     HeroTwo,
     Features,
+    Testimonial,
     Footer
   },
   data() {
@@ -58,10 +63,12 @@ export default {
 
 <style scoped>
 .main-wrapper {
-  background-color: rgb(245, 250, 255);
+  background-color: rgb(255, 255, 255);
 }
 .other-content{
   max-width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
 }
 .hero-cont {
   margin: 3rem 0;
@@ -78,7 +85,10 @@ export default {
 .features-cont{
   margin-top: 3.5rem;
 }
-
+.testimonial-cont{
+  max-width: 700px;
+  margin: 5rem auto;  
+}
 @media screen and (max-width: 1000px) {
   .content {
     margin: 0 20px;

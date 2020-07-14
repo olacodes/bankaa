@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import features from '../data/features'
+import features from '../../data/features'
 
 export default {
   name: 'Featurs',
@@ -39,16 +39,16 @@ export default {
   methods: {
     featureColor(val) {
       if (val == 3) {
-        return '#68C9BA1C'
+        return '#f1c1ff'
       }
       if (val == 5) {
-        return '#F063B81C'
+        return '#474aff4b'
       }
       if (val == 6) {
-        return '#2D9CDB1C'
+        return '#c1fff5'
       }
       if (val == 4) {
-        return '#9C69E21C'
+        return '#8587ff'
       }
     },
     setImage(val) {
@@ -94,6 +94,8 @@ export default {
   border-radius: 2.5rem;
   border-top-left-radius: 6rem;
   position: relative;
+  color: #474aff4b;
+  color: black;
   /* border-bottom-left-radius: 4rem; */
 }
 

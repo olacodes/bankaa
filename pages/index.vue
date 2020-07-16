@@ -1,6 +1,6 @@
 <template>
-  <div class="main-wrapper">
-    <NavBar />
+  <div class="main-wrapper has-background-white">
+    <NavBar @loginClicked="cardModal" :password='password' :email='email'/>
     <div class="container content">
       <div class="hero-cont">
         <Hero />
@@ -23,12 +23,10 @@
             </div>
           </div>
           <div class="testimonial-cont">
-            <Testimonial/>
+            <Testimonial />
           </div>
         </div>
-
       </div>
-
     </div>
     <Footer />
   </div>
@@ -42,6 +40,7 @@ import Features from '~/components/webComponents/Features'
 import features from '../data/features'
 import Footer from '~/components/webComponents/Footer'
 import Testimonial from '~/components/webComponents/Testimonial'
+import LoginModal from '~/components/modals/LoginModal'
 
 export default {
   layout: 'empty',
@@ -51,12 +50,25 @@ export default {
     HeroTwo,
     Features,
     Testimonial,
-    Footer
+    Footer,
+    LoginModal,
   },
   data() {
     return {
       features,
+      password: '',
+      email: ''
     }
+  },
+  methods: {
+    cardModal() {
+      this.$buefy.modal.open({
+        parent: this,
+        component: LoginModal,
+        hasModalCard: true,
+        trapFocus: true,
+      })
+    },
   },
 }
 </script>
@@ -65,10 +77,8 @@ export default {
 .main-wrapper {
   background-color: rgb(255, 255, 255);
 }
-.other-content{
+.other-content {
   max-width: 1200px;
-  margin-right: auto;
-  margin-left: auto;
 }
 .hero-cont {
   margin: 3rem 0;
@@ -82,12 +92,12 @@ export default {
   justify-content: center;
   margin: 0 auto;
 }
-.features-cont{
+.features-cont {
   margin-top: 3.5rem;
 }
-.testimonial-cont{
-  max-width: 700px;
-  margin: 5rem auto;  
+.testimonial-cont {
+  max-width: 600px;
+  margin: 5rem 0;
 }
 @media screen and (max-width: 1000px) {
   .content {

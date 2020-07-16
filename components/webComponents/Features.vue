@@ -68,7 +68,7 @@ export default {
   margin-top: 2rem auto;
 }
 .features-main-wrapper {
-  margin: 2rem auto;
+  margin: 2rem 0;
   display: flex;
 }
 .features-img-cont {

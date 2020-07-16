@@ -40,11 +40,11 @@
       <div class="navbar-end">
         <div class="navbar-item">
           <div class="buttons">
-            <a class="button is-light">
-              <strong>Sign up</strong>
+            <a class="button is-light" @click="$emit('loginClicked')">
+              <strong>Login</strong>
             </a>
             <a class="button is-light">
-              Log in
+              Sign up
             </a>
           </div>
         </div>
@@ -56,7 +56,9 @@
 <script>
 export default {}
 </script>
-
+  methods: {
+    
+  },
 <style>
 .logo:hover {
   background-color: white !important;

@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div class="login-modal-container">
     <form @submit.prevent="onSubmit">
-      <div class="modal-card" style="width: auto;">
+      <div class="modal-card">
         <header class="modal-card-head">
           <p class="modal-card-title">Login</p>
         </header>
@@ -47,17 +47,36 @@ export default {
     return {
       password: '',
       email: '',
+      isFullPage: true
     }
   },
   methods: {
     async onSubmit() {
-      const loginDetails = { "email": this.email, "password": this.password }
-      console.log(loginDetails);
-      const res = await this.$store.dispatch('auth/login/authLogin', loginDetails)
+      const loginDetails = { email: this.email, password: this.password }
+      const loading = this.$buefy.loading.open({
+        container: this.isFullPage ? null : null,
+      })
+      const res = await this.$store.dispatch(
+        'auth/login/authLogin',
+        loginDetails
+      )
+      if(res.status === 200) {
+        loading.close()
+        // this.history.push('/landingpage')
+      }
+
+      loading.close()
       console.log(res)
     },
   },
 }
 </script>
 
-<style></style>
+<style>
+@media screen and (max-width: 700px){
+  .modal-card{
+    max-width: 600px !important;
+    border: 2px solid red
+  }
+}
+</style>

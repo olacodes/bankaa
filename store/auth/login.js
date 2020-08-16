@@ -16,9 +16,10 @@ export const actions = {
     try {
       payload = await this.$axios.$post('https://banka-apis.herokuapp.com/api/v1/auth/signin/', data)
       commit('SETLOGINTOKEN', payload)
-      return payload
+      return 1
     } catch (error) {
       console.log('There was an error', error)
+      return 2
     }
   }
 }

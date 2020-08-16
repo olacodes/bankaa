@@ -39,7 +39,7 @@ export default {
   flex-direction: column;
   justify-content: center;
   margin-left: 1rem;
-  color: green;
+  color: #5A98F2;
 }
 .trans-img-cont {
   width: 8rem;

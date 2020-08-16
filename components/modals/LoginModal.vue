@@ -47,7 +47,7 @@ export default {
     return {
       password: '',
       email: '',
-      isFullPage: true
+      isFullPage: true,
     }
   },
   methods: {
@@ -60,23 +60,24 @@ export default {
         'auth/login/authLogin',
         loginDetails
       )
-      if(res.status === 200) {
+      if (res === 1) {
         loading.close()
-        // this.history.push('/landingpage')
+        this.history.push('/dashboard')
       }
-
-      loading.close()
-      console.log(res)
+      window.setTimeout(
+        loading.close(),
+        this.$parent.close()
+      , 3000)
     },
   },
 }
 </script>
 
 <style>
-@media screen and (max-width: 700px){
-  .modal-card{
+@media screen and (max-width: 700px) {
+  .modal-card {
     max-width: 600px !important;
-    border: 2px solid red
+    border: 2px solid red;
   }
 }
 </style>

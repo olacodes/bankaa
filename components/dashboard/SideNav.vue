@@ -27,13 +27,12 @@ export default {
 <style scoped>
 .side-nav-cont {
   margin: 0 auto;
-  min-height: 100vh;
+  min-height: 100%;
   box-shadow: 3px 3px 3px 3px rgb(197, 197, 197);
   padding: 1.5rem 0;
   background-color: rgb(255, 255, 255);
   border-top-right-radius: 1.5rem;
   border-bottom-right-radius: 1rem;
-
 }
 
 .side-nav{
